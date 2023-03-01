@@ -1,12 +1,13 @@
 var w=window.innerWidth|| document.documentElement.clientWidth|| document.body.clientWidth;
 var h=window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
 var vw = window.screen.availWidth;
+var bodyElm = document.body;
 
 var g_scale = 0.8;
 if (w>600) {
     g_scale = 1.5;
 }  else {
-    $('body').addClass('regular');
+    bodyElm.classList ? bodyElm.classList.add('regular') : bodyElm.className += ' regular';
 }
 
 var btn=document.getElementById("btn");
@@ -19,12 +20,15 @@ var _ratio = w/1200;
 
 const aspect_ratio = w/h;
 if (aspect_ratio > 0.6) {
-    $('body').addClass('shrink');
+    bodyElm.classList ? bodyElm.classList.add('shrink') : bodyElm.className += ' shrink';
     g_scale = 1.4;
     zcm_h = 260;
 } 
-if (aspect_ratio > 0.71) {
-    $('body').addClass('pad');
+if (aspect_ratio > 1) {
+    bodyElm.classList ? bodyElm.classList.add('land') : bodyElm.className += ' land';
+    g_scale = 1;
+} else if (aspect_ratio > 0.71) {
+    bodyElm.classList ? bodyElm.classList.add('pad') : bodyElm.className += ' pad';
     g_scale = 1.1;
 }
 var yb_scale = g_scale*0.7;

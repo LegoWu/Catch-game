@@ -9,12 +9,12 @@ body {
 	display: block;
 	width: 100%;
 	height: 100%;
-	max-width: 1200px;
+	/* max-width: 1200px; */
 	text-align:center;	
 }
 .content {
 	position:fixed;width:100%;height:100%;
-	max-width: 1200px;
+	/* max-width: 1200px; */
 	background-repeat: no-repeat;
 	-webkit-background-size: cover; /* For WebKit*/
     -moz-background-size: cover;    /* Mozilla*/
@@ -25,20 +25,10 @@ body {
 	display: none;
 	/* background-image: url("../img/game-bg.jpg"); */
 }
-#bottom {
-	position: fixed;
-	bottom: -10px;
-	width: 100vw;
-	max-width: 1200px;
-}
-#bottom img {
-	width: 100%;
-	max-width: 1200px;
-}
 #action .title-top {
-	position: fixed;
+	position: absolute;
+	width: 100%;
     top: -100px;
-	left: 35%;
 }
 #action .title-top img {
 	transform: rotate(-8deg);
@@ -109,6 +99,9 @@ button {
 .shrink #action .title-bottom {
     bottom: -8%;
 }
+.shrink #action .title-btn img {
+    width: auto;
+}
 .shrink #action .action-text {
     width: 68vw;
 }
@@ -122,9 +115,6 @@ button {
 .regular #action .title-bottom img {
 	transform: scale(1);
 }
-.regular #action .title-top {
-    left: 25%;
-}
 .regular #action .title-top img {
     transform: rotate(-8deg) scale(0.6);
 }
@@ -134,18 +124,12 @@ button {
 .pad #action .title-bottom img {
     transform: scale(1.5);
 }
-.pad #action .title-top img {
+/* .pad #action .title-top img {
     transform: rotate(-6deg);
     width: 85%;
-}
-.pad #action .title-top {
-    left: 34%;
-}
+} */
 .pad #action .title-btn {
     top: 78%;
-}
-.pad #action .title-btn img {
-    width: 35vw;
 }
 .pad.shrink #action .title-bottom {
     bottom: -10%;
@@ -158,4 +142,23 @@ button {
 }
 .pad #success-text {
     width: 32vw;
+}
+.land.shrink #action .action-text {
+    width: 55vw;
+}
+.land.shrink #action .text1 {
+	width: 500px;
+	display: block;
+	margin: 0 auto;
+    margin-top: 50px;
+}
+.land #action .title-top {
+	position: absolute;
+	width: 100%;
+}
+.land #action .title-bottom img {
+	transform: scale(1.5);
+}
+.land #action .title-btn {
+	top: 80%;
 }
